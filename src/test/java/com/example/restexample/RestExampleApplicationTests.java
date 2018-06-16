@@ -14,6 +14,7 @@ public class RestExampleApplicationTests {
 	@Test
 	public void contextLoads() {
 		assertTrue(true);
+		System.out.println("Hello");
 	}
 
 }
