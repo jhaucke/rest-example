@@ -19,6 +19,7 @@ pipeline {
         stage('Test 2') {
           steps {
             sleep 5
+            sh 'ping -c 5 localhost'
           }
         }
       }
