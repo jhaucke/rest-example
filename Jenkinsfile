@@ -9,9 +9,18 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
-        sh './mvnw clean test'
-        junit '**/surefire-reports/**/*.xml'
+      parallel {
+        stage('Test 1') {
+          steps {
+            sh './mvnw clean test'
+            junit '**/surefire-reports/**/*.xml'
+          }
+        }
+        stage('Test 2') {
+          steps {
+            sleep 5
+          }
+        }
       }
     }
     stage('Make Container') {
