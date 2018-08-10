@@ -24,12 +24,11 @@ pipeline {
       }
     }
     stage('Make Container') {
+      when {
+        branch 'master'
+      }
       steps {
-        if (env.BRANCH_NAME == 'master') {
-          sh './mvnw install dockerfile:build'
-        } else {
-          print 'Make Container only on MASTER'
-        }
+        sh './mvnw install dockerfile:build'
       }
     }
   }
