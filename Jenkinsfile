@@ -23,9 +23,11 @@ pipeline {
         }
       }
     }
-    stage('Make Container') {
-      steps {
-        sh './mvnw install dockerfile:build'
+    if (env.BRANCH_NAME == 'master') {
+      stage('Make Container') {
+        steps {
+          sh './mvnw install dockerfile:build'
+        }
       }
     }
   }
