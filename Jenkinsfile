@@ -28,7 +28,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh './mvnw install dockerfile:build'
+        sh './mvnw install dockerfile:build -Ddockerfile.tag=R18.8.1'
       }
     }
   }
