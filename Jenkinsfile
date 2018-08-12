@@ -25,10 +25,10 @@ pipeline {
     }
     stage('Make Container') {
       when {
-        branch 'master'
+        branch 'master|release'
       }
       steps {
-        sh './mvnw install dockerfile:build -Ddockerfile.tag=R18.8.1'
+        sh './mvnw install dockerfile:build'
       }
     }
   }
