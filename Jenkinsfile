@@ -47,11 +47,11 @@ pipeline {
             echo 'Deploying feature branch'
           }
         }
-        sh ls
+        sh 'ls'
         fileOperations {
           fileCreateOperation('testdsl.txt','test content')
         }
-        sh ls
+        sh 'ls'
       }
     }
   }
