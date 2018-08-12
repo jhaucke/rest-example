@@ -34,5 +34,20 @@ pipeline {
         sh './mvnw install dockerfile:build'
       }
     }
+    stage('Deploy') {
+      steps {
+        script {
+          if (env.BRANCH_NAME == 'master') {
+            echo 'Deploying master branch...'
+          }
+          if (env.BRANCH_NAME.contains('release')) {
+            echo 'Deploying release branch'
+          }
+          if (env.BRANCH_NAME.contains('feature')) {
+            echo 'Deploying feature branch'
+          }
+        }
+      }
+    }
   }
 }
