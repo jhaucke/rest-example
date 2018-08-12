@@ -6,7 +6,7 @@
 
 	<groupId>com.example</groupId>
 	<artifactId>rest-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>18.8.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>rest-example</name>
