@@ -25,7 +25,7 @@ pipeline {
     }
     stage('Make Container') {
       when {
-        branch 'master|release'
+        branch 'master','release'
       }
       steps {
         sh './mvnw install dockerfile:build'
