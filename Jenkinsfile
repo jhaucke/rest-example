@@ -37,7 +37,7 @@ pipeline {
     stage('Deploy') {
       steps {
         fileOperations {
-          fileCreateOperation('testdsl.txt','test content')
+          fileCreateOperation("testdsl.txt","test content")
         }
       }
     }
