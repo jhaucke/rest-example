@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Teest12345'
+        echo env.PADAM
       }
     }
   }
