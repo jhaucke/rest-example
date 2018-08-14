@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment { 
-    PADAM = "${env.BRANCH_NAME} | tr / -"
+    PADAM = "echo ${env.BRANCH_NAME} | tr / -"
   }
   stages {
     stage('Build') {
