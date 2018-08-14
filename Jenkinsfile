@@ -1,12 +1,12 @@
 pipeline {
   agent any
   environment { 
-    PADAM = "echo ${env.BRANCH_NAME} | tr / -"
+    PADAM = "Hallo/Test"
   }
   stages {
     stage('Build') {
       steps {
-        echo env.PADAM
+        sh "echo ${env.PADAM} | tr / -"
       }
     }
   }
