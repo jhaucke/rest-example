@@ -1,37 +1,12 @@
 pipeline {
   agent any
+  environment { 
+    PADAM = 'Test123'
+  }
   stages {
     stage('Build') {
       steps {
-        sh 'chmod +x mvnw'
-        sh './mvnw clean package'
-        archiveArtifacts(artifacts: 'target/*.jar', onlyIfSuccessful: true)
-      }
-    }
-    stage('Test') {
-      parallel {
-        stage('Test 1') {
-          steps {
-            sh './mvnw clean test'
-            junit '**/surefire-reports/**/*.xml'
-          }
-        }
-        stage('Test 2') {
-          steps {
-            sh 'ping -c 5 localhost'
-          }
-        }
-      }
-    }
-    stage('Make Container') {
-      when {
-        anyOf {
-          branch 'master'
-          branch 'release/*'
-        }
-      }
-      steps {
-        sh './mvnw install dockerfile:build'
+        echo $PADAM
       }
     }
   }
