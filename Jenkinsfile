@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo '$PADAM'
+        echo '${PADAM}'
       }
     }
   }
