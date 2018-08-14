@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "PADAM = echo ${env.BRANCH_NAME} | tr / -"
+        sh "env.PADAM = echo ${env.BRANCH_NAME} | tr / -"
         echo env.PADAM
       }
     }
