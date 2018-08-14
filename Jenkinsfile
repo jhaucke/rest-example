@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment { 
-    PADAM = "env.BRANCH_NAME"
+    PADAM = 'env.BRANCH_NAME'
   }
   stages {
     stage('Build') {
